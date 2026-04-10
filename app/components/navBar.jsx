@@ -10,12 +10,12 @@ const Navbar = () => {
     <>
       <style>{`
         .navbar { width:100%; background: linear-gradient(135deg,#fff 0%,#f0f7ff 50%,#e6f0ff 100%); border-bottom:1px solid rgba(0,0,0,0.05); font-family:sans-serif; }
-        .inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; height:70px; position:relative; }
+        .inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; height:70px; position:relative; gap: 2rem; }
         .logo { font-size:22px; font-weight:700; color:#6366f1; text-decoration:none; }
-        .links { display:flex; gap:40px; position:absolute; left:50%; transform:translateX(-50%); }
+        .links { display:flex; gap:40px; }
         .link { color:#374151; text-decoration:none; font-size:15px; font-weight:500; transition:color .2s; }
         .link:hover { color:#6366f1; }
-        .auth { display:flex; gap:12px; align-items:center; }
+        .auth { display:flex; gap:12px; align-items:center; margin-left: auto; }
         .btn { padding:8px 20px; font-size:14px; font-weight:500; border-radius:6px; cursor:pointer; transition:all .2s; text-decoration:none; }
         .signup { color:#6366f1; border:1.5px solid #6366f1; background:transparent; }
         .signup:hover { background: rgba(99,102,241,0.1); }

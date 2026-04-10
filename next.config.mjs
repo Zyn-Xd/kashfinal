@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    turbopack: {
-      root: ".",
-    },
-  },
+  /* config options here */
+  reactCompiler: true,
   images: {
     remotePatterns: [
       {

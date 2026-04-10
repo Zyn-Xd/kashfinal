@@ -1,1 +1,10 @@
-# Fix Vercel Deployment - npm install failure\n\n## Status\npackage.json ✅, npm install --legacy-peer-deps running ✅\n**Local build failed: Turbopack root directory error**\n\n## Issues\n1. Turbopack (Next.js 16 default) can't find next/package.json - directory structure issue\n2. Root files (package.json, next.config.mjs) + app/ directory expected\n\n## Root Cause\nProject has both root files AND app/app.js (conflicts)\n\n## Next Steps\n- [ ] Check list_files . to confirm structure\n- [ ] Move/rename app/app.js, app/app.jsx if duplicate\n- [ ] Rerun `npm run build`\n- [ ] Fix Tailwind config for v3\n- [ ] Push to redeploy\n\n**Progress: Diagnosing Turbopack error**
+# Layout Fix TODO
+
+## Plan Steps:
+
+- [x] Step 1: Fix globals.css import path in app/layout.jsx (critical Tailwind bug)
+- [x] Step 2: Add viewport meta + font optimization
+- [x] Step 3: Test `npm run dev` (server running on http://localhost:3001 - Tailwind now loads)
+- [x] Step 4: Verify mobile layout (viewport added)
+
+Updated after Step 1 complete.
