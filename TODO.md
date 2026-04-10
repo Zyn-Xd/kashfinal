@@ -1,0 +1,1 @@
+# TODO: Add KASHflow card Image to Hero section\n\n## Plan Breakdown\n1. ✅ Create TODO.md with steps\n2. Add CSS animation class for new card (if needed)\n3. Edit app/components/Hero.jsx: Insert Image component into .phone-panel with positioning and animation\n4. Verify layout in browser\n5. Mark complete and attempt_completion
