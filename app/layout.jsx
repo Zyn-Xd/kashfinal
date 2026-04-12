@@ -1,9 +1,9 @@
+import "./globals.css";
 import Navbar from "./components/Navbar";
-import "../globals.css";
 
 export const metadata = {
   title: "KASHflow",
-  description: "Premium online shopping experience",
+  description: "All your transactions, receipts and expenses in one smart app.",
 };
 
 export default function RootLayout({ children }) {

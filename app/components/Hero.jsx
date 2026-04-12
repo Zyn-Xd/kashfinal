@@ -1,9 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 
-/* ─── Inline keyframes injected once ─────────────────────── */
+// NOTE: Add this to your next.config.js for the external image to work:
+//
+// module.exports = {
+//   images: {
+//     domains: ["www.dropbox.com"],
+//   },
+// };
+
 const CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap');
 
@@ -440,9 +447,6 @@ function PhoneMockup() {
 
 /* ─── Main Hero ───────────────────────────────────────────── */
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
   return (
     <>
       <style>{CSS}</style>
@@ -533,10 +537,10 @@ export default function Hero() {
               className="headline h1-anim"
               style={{
                 fontSize: "clamp(2.4rem, 3.8vw, 3.4rem)",
-                fontWeight: 700, // 🔥 sweet spot (not too bold, not too thin)
+                fontWeight: 700,
                 color: "var(--kash-blue)",
                 lineHeight: 1.15,
-                letterSpacing: "-0.01em", // subtle tightening, not stretched
+                letterSpacing: "-0.01em",
                 margin: 0,
                 marginBottom: 16,
                 maxWidth: 480,
@@ -820,6 +824,10 @@ export default function Hero() {
               minHeight: 280,
             }}
           >
+            {/*
+              IMPORTANT: Add "www.dropbox.com" to your next.config.js images.domains
+              array, or replace this with a locally hosted image in /public.
+            */}
             <Image
               src="https://www.dropbox.com/scl/fi/i0uccxznt7oysn6pajjkz/card.png.png?rlkey=ntb5dxlxl812napgyjo4ows24&raw=1"
               alt="KASHflow card"
@@ -836,10 +844,10 @@ export default function Hero() {
               className="headline"
               style={{
                 fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
-                fontWeight: 700, // balanced thickness
+                fontWeight: 700,
                 color: "var(--kash-blue)",
-                lineHeight: 1.18, // slightly more breathing room
-                letterSpacing: "-0.01em", // subtle, not stretched
+                lineHeight: 1.18,
+                letterSpacing: "-0.01em",
                 margin: 0,
                 marginBottom: 20,
                 maxWidth: 420,
@@ -882,7 +890,10 @@ export default function Hero() {
       </section>
 
       {/* ── FEATURES GRID ── */}
-      <section className="features-section" style={{ background: "white", padding: "80px 32px" }}>
+      <section
+        className="features-section"
+        style={{ background: "white", padding: "80px 32px" }}
+      >
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div className="features-grid">
             {[

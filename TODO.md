@@ -1,10 +1,12 @@
-# Layout Fix TODO
+# Revert & Fix Progress Tracker
 
-## Plan Steps:
+## Steps:
 
-- [x] Step 1: Fix globals.css import path in app/layout.jsx (critical Tailwind bug)
-- [x] Step 2: Add viewport meta + font optimization
-- [x] Step 3: Test `npm run dev` (server running on http://localhost:3001 - Tailwind now loads)
-- [x] Step 4: Verify mobile layout (viewport added)
+- [x] 1. Fix navBar.jsx (add "use client" + React import) ✓
+- [x] 2. npm install --legacy-peer-deps ✓
+- [x] 3. npm run dev & test ✓
+- [x] 4. Hydration fixed previously (Footer/Navbar styled-jsx)
 
-Updated after Step 1 complete.
+**Status**: Minimal fixes only. Keeping user's original code structure.
+
+**Next**: Kill any old terminals (Ctrl+C), then run suggested commands.

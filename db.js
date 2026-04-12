@@ -9,28 +9,28 @@ if (!uri) {
 }
 
 // Reuse the client across hot-reloads in development (Next.js best practice)
-let client;
 let clientPromise;
 
 if (process.env.NODE_ENV === "development") {
+  // In development, use a global variable so the MongoClient is not
+  // recreated on every hot-reload
   if (!global._mongoClientPromise) {
-    client = new MongoClient(uri);
+    const client = new MongoClient(uri);
     global._mongoClientPromise = client.connect();
   }
   clientPromise = global._mongoClientPromise;
 } else {
-  client = new MongoClient(uri);
+  const client = new MongoClient(uri);
   clientPromise = client.connect();
 }
 
 export async function connectDB(dbName = "kashflow") {
   try {
     const connectedClient = await clientPromise;
-    console.log("Connected to MongoDB");
     return connectedClient.db(dbName);
   } catch (error) {
     console.error("MongoDB connection error:", error);
-    throw error; // Re-throw so callers can handle it properly
+    throw error;
   }
 }
 
